@@ -2,6 +2,7 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import NProgressProvider from "@/components/NProgressProvider";
+import { Toaster } from "react-hot-toast";
 
 const dmSans = Work_Sans({
   subsets: ["latin"],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${dmSans.className} antialiased`}
       >
+        <Toaster />
         <NProgressProvider />
         <header>
           <Navbar />

@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import LoginForm from "./LoginForm";
 import { Button } from "./ui/button";
 import {
@@ -8,10 +11,14 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "./ui/dialog"
+import { useState } from "react";
 
 const LoginDialog = () => {
+    const [open, setOpen] = useState(false);
+    const router = useRouter();
+
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
                 <Button variant="secondary">Login</Button>
             </DialogTrigger>
@@ -22,7 +29,12 @@ const LoginDialog = () => {
                         Login to your account to continue to LOGO
                     </DialogDescription>
                 </DialogHeader>
-                <LoginForm />
+
+                <LoginForm onSuccess={() => {
+                    setOpen(false);
+                    router.push("/");
+                }} />
+
             </DialogContent>
         </Dialog>
     )
