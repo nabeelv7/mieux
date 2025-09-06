@@ -1,9 +1,11 @@
+import Link from "next/link";
 import SignUpForm from "./SignUpForm";
 import { Button } from "./ui/button";
 import {
     Dialog,
     DialogContent,
     DialogDescription,
+    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -23,6 +25,9 @@ const SignUpDialog = () => {
                     </DialogDescription>
                 </DialogHeader>
                 <SignUpForm />
+                <DialogFooter>
+                    <p className="text-sm">By signing up, you agree to our <Link className="underline" href="/tos">Terms of Service.</Link></p>
+                </DialogFooter>
             </DialogContent>
         </Dialog>
     )

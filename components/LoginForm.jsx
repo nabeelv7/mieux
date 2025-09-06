@@ -2,6 +2,7 @@
 
 import ButtonGithub from "./ButtonGithub";
 import ButtonGoogle from "./ButtonGoogle";
+import InputPassword from "./InputPassword";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -12,10 +13,10 @@ const LoginForm = () => {
         <div>
             <form method="POST">
                 <Label className="mt-6" htmlFor="email">Email</Label>
-                <Input type="email" className="mt-2" name="email" />
+                <Input placeholder="Enter email here.." type="email" className="mt-2" name="email" />
 
                 <Label className="mt-6" htmlFor="password">Password</Label>
-                <Input type="password" className="mt-2" name="password" />
+                <InputPassword />
 
                 <Button className="mt-6 w-full">Login</Button>
 
